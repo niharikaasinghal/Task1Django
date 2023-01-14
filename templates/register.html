@@ -1,0 +1,35 @@
+<style>
+    h5{
+        color : red;
+    }
+    .container{
+        background-color: rgb(255, 229, 180);
+        padding: 20px 20px;
+        width: 300px;
+        border-radius: 5px;
+    }
+</style>
+
+{%for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+
+<h1>Sign up below:</h1>
+<div class="container">
+    <form method="POST" action="register" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+            First Name:  <input type="text" name="fname" /><br><br>
+            Last Name:  <input type="text" name="lname" /><br><br>
+            Profile pic:  <input type="File" accept="image/*" name="pp" /><br><br>
+            Username:  <input type="text" name="username" /><br><br>
+            Email: <input type="email" name="email" /><br><br>
+            Password:  <input type="password" name="pass1" /><br><br>
+            Confirm Password:  <input type="password" name="pass2" /><br><br>
+            Address:  <input type="text" name="address" /><br><br>
+            <input type="submit" />
+        </fieldset>
+    </form>
+</div>
+
+<p>Already having an account? Click <a href='login'>here</a> to login</p>

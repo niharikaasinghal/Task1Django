@@ -1,0 +1,33 @@
+<style>
+    .container{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 12px;
+        color: rgb(6, 5, 5);
+        background-color: rgb(255, 239, 211);
+        width: 300px;
+   }
+   .container1{
+    background-color: rgb(255, 229, 180);
+    width: 40%;
+    padding: 20px 30px;
+   }
+   .container a{
+    text-decoration: none;
+   }
+</style>
+{% if obj %}
+<h1>Welcome, {{obj.username}}</h1>
+<h3>Your details are-<br></h3>
+<div class="container1">
+    
+    <h3>Name: {{obj.firstname}} {{obj.lastname}}</h3>
+    <h3>Email: {{obj.email}}</h3>
+    <img src="media/{{obj.profilepic}}" alt="" height="250px" width="250px">
+    <h3>Address: {{obj.address}}</h3>
+</div>
+          {% else %}
+          <div class="container">
+            <h2>Click <a href="login">here</a> to Login</h2>
+            <h2>Click <a href="register">here</a> to Register</h2>
+          </div>
+          {% endif %}
